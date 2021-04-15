@@ -1,0 +1,378 @@
+//ERROR COMPONENT
+.error {
+	padding: 4rem 6rem 4rem 4rem;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 1000;
+	color: #fff;
+	background-color: rgba(red,.7);
+	backdrop-filter: blur(10px);
+	border-radius:5px;
+	// transition: all .4s ease;
+	animation:.5s ease forwards animationTwo;
+	&__msg {
+		font-size: 1.8rem;
+		text-transform: uppercase;
+	}
+	&__close {
+		&:link,
+		&:visited {
+			display: inline-block;
+			margin-top: 1rem;
+			padding: .5rem 3rem;
+			color: hsl(200, 15%, 8%);
+			font-size: 1.6rem;
+			text-decoration: none;
+			background-color: #fff;
+			transition: all .4s ease;
+			border-radius:5px;
+		}
+		&:hover {
+			background-color: rgba(whitesmoke,1);
+		}
+	}
+}
+//PAGINATION COMPONENT
+.pagination {
+	width: 100%;
+	display: flex;
+	justify-content:space-evenly;
+	background-color: var(--color-bg);
+	padding: 2rem 0;
+	transition: background-color .4s ease;
+	&__btn {
+		cursor: pointer;
+		font-size: 2rem;
+		outline: none;
+		border: none;
+		padding: 1rem 4rem;
+		background-color: var(--color-element);
+		color: var(--color-text);
+		box-shadow: 0 .2rem .8rem rgba(0,0,0,.08),0 -.2rem .8rem rgba(0,0,0,.08);
+		transition: background-color .4s ease;
+		&:hover {
+			outline: none;
+			background-color: rgba(var(--color-element),.8);
+		}
+	}
+}
+
+.heading {
+	&__primary{
+		font-size: 2.5rem;
+		font-family: sans-serif;
+		@include responsive(phone){font-size: 1.8rem;}
+	}
+	&__secondary {
+		font-size: 3rem;
+		@include responsive(sm-desktop){font-size: 2.5rem;}
+
+	}
+    &__tertiary {
+    	font-size: 2rem;
+    	@include responsive(tablet){font-size: 1.8rem;}
+    }
+	
+}
+.theme {
+	display: flex;
+    align-items: center;
+    cursor: pointer;
+	&__icon {
+	    font-size: 3.5rem;
+	    display: flex;
+	    align-items: center;
+	    margin-right: .5rem;
+	    @include responsive(phone){font-size: 3rem;}
+	}
+	&__mode {
+		font-weight: 600;
+		@include responsive(phone){font-size: 1.5rem;}
+	}
+}
+.home {
+	&__top{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		
+		@include responsive(phone){
+			flex-direction: column;
+		}
+	}
+	&__bottom {
+		display: grid;
+		grid-template-columns: repeat(4,1fr);
+		grid-gap: 6rem;
+		margin-top:5rem; 
+		animation:1s ease forwards animationTwo;
+		@include responsive(tablet){
+			grid-template-columns: repeat(2,1fr);
+			grid-gap: 3rem;
+		}
+		@include responsive(phone){
+			margin-top: 3.5rem;
+			grid-template-columns:1fr;
+			padding: 0 5vw;
+			grid-row-gap: 5rem;
+	 	}
+	}
+}
+
+//SEARCH COMPONENT
+.search {
+	position: relative;
+	@include responsive(phone){
+		margin-bottom: 5rem;
+		width: 100%;
+	}
+	&__icon {
+		display: inline-block;
+		font-size: 2rem;
+		position: absolute;
+		top: 50%;
+		left: 2.5rem;
+		transform: translateY(-50%);
+		font-weight: 600;
+	}
+	&__input {
+	   display: inline-block;
+       width:45rem;
+	   color: var(--color-input);
+       border: none;
+       background: var(--color-element);
+       padding: 2rem 6rem;
+       box-shadow:0 .3rem .5rem rgba(#000,.05),0 -.3rem .5rem rgba(#000,.05);
+       border-radius: 5px;
+       outline:none;
+       transition: all .4s ease;
+       @include responsive(tablet){width: 50vw;}
+       @include responsive(phone){
+			width: 100%;
+	   }
+       &::placehoder {
+       	color: var(--color-input);
+       }
+       &:focus {
+       	width: 50rem;
+       	@include responsive(tablet){
+			width: 52vw;
+		}
+		@include responsive(phone){
+			width: 100%;
+	   }
+       }
+	}
+}
+
+//FILTER COMPONENT
+.filter {
+	display: inline-block;
+	position: relative;
+	@include responsive(phone){
+		align-self: flex-start;
+	 }
+	&__icon {
+		position: absolute;
+		right:2rem;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	&__select {
+		-webkit-apperance:none;
+		appearance:none;
+		padding: 2rem;
+		color: var(--color-input);
+		background-color:var(--color-element);
+		border: none;
+		outline: none;
+		width: 20rem;
+		box-shadow:0 .3rem .5rem rgba(#000,.05);
+		border-radius: 5px;
+		transition: background-color .4s ease;
+		 @include responsive(tablet){width: 18rem;}
+	}
+	&__option {
+		-webkit-appearance:none;
+		appearance:none;
+		width: 100%;
+	}
+}
+
+//CARD COMPONENT 
+.card {
+	width: 100%;
+	background-color: var(--color-element);
+	box-shadow:0 .3rem .5rem rgba(#000,.05); 
+	overflow: hidden;
+	position: relative;
+	animation:3s ease forwards animationTwo;
+	border-radius: 0 0 5px 5px;
+	transition: background-color .4s ease;
+	&__img {
+	  display: inline-block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all .6s ease;
+	}
+	&__link {
+		height: 20vh;
+		width: 100%;
+		display: inline-block;
+		text-decoration: none;
+		overflow: hidden;
+		position: relative;
+		&::before {
+			content: "";
+			z-index: 1000;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height:100%;
+			width: 0;
+			background:rgba(0,0,0,.2);
+			transition: all .6s ease;
+		}
+		&:hover > * {
+			transform: scale(1.1);
+		}
+		&:hover::before {
+			width: 100%;
+		}
+	}
+	&__details {
+		padding: 2rem 2rem 4rem 2rem;
+		position: relative;
+		& > *:not(:first-child){
+			margin-top: 1rem;
+		}
+		& > :first-child{
+			margin-bottom: 2rem;
+		}
+       &::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 10%;
+			height: 15%;
+			border-radius: 100px 0 0 0;
+			background-color: hsl(0, 0%, 92%);
+		}
+	}
+	&__population {
+
+	}
+	&__region {
+
+	}
+	&__capital {
+
+	}
+	&__data {
+		color: var(--color-input);
+	}
+}
+
+
+//DETAILS COMPONENT
+.details{
+	background-color:var(--color-bg);
+	font-size: 1.8rem;
+	height: 100%;
+	animation:1s ease forwards animationOne;
+	&__top {
+		margin-top: 4rem;
+	}
+	&__bottom {
+		margin-top: 7rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include responsive(tablet){
+			flex-direction: column;
+		}
+	}
+	&__fig {
+		width:40vw;
+		@include responsive(tablet){
+			width: 100%;
+			margin-bottom: 3rem;
+		}
+
+	}
+	&__img {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	&__info {
+		width: 45vw;
+		@include responsive(tablet){
+			width: 100%;
+		}
+		&--main {
+			color: var(--color-text);
+			margin-top: 2rem;
+			display: flex;
+			justify-content: space-between;
+			line-height: 1.5;
+			& strong {font-weight: 600;}
+			@include responsive(sm-desktop){margin-top: 1rem;}
+			@include responsive(phone){
+				flex-direction: column;
+			}
+		}
+		&--sub {
+			margin-top: 5rem;
+			@include responsive(sm-desktop){margin-top: 2.5rem;}
+		}
+		&--geo {
+			@include responsive(phone){margin-bottom: 5rem;}
+		}
+	}
+	&__data {
+		font-size: 1.6rem;
+		font-weight:300;
+	}
+	&__borders {
+		display: inline-block;
+		@include responsive(phone){
+			display: block;
+			margin-bottom: 2rem;
+		}
+	}
+
+}
+//BUTTON COMPONENT
+.btn {
+	&-back {
+		&:link,
+		&:visited {
+			text-decoration: none;
+			font-size: 1.8rem;
+			color: var(--color-input);
+			display: inline-block;
+			padding: 1rem 3rem;
+			background: var(--color-element);
+			box-shadow: 0 .2rem .5rem rgba(0,0,0,.08),.2rem 0 .5rem rgba(0,0,0,.08),0 -.2rem .5rem rgba(0,0,0,.08),-.2rem 0 .5rem rgba(0,0,0,.08);
+			border-radius: 5px;
+			@include responsive(phone){font-size: 1.5rem;}
+		}
+	}
+}
+//BORDER COUNTRY COMPONENT
+.border-country {
+	display: inline-block;
+	padding: .5rem 2rem;
+	background-color: var(--color-element);
+	text-align: center;
+	font-size: 1.4rem;
+	box-shadow: 0 .1rem .5rem rgba(0,0,0,.03),.1rem 0 .5rem rgba(0,0,0,.03),0 -.1rem .5rem rgba(0,0,0,.03),-.1rem 0 .5rem rgba(0,0,0,.03);
+	margin-right: .5rem;
+	margin-bottom: 1rem;
+}

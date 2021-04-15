@@ -1,0 +1,11 @@
+@mixin responsive($break-point){
+	@if $break-point == sm-desktop {
+		@media only screen and (max-width: 68.75em){@content;}
+	}
+	@if $break-point == tablet {
+		@media only screen and (max-width:56.25em){@content;}
+	}
+	@if $break-point == phone {
+		@media only screen and (max-width: 37.5em){@content;}
+	}
+}

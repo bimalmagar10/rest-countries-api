@@ -1,0 +1,20 @@
+{
+  "name": "rest-countries-api",
+  "version": "1.0.0",
+  "description": "![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "prebuild":"rm -rf dist .cache",
+    "dev": "parcel src/index.html",
+    "build":"parcel build src/index.html --no-source-maps --no-cache"
+  },
+  "author": "Bimal Thapa Magar",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.32.8"
+  },
+  "dependencies": {
+    "regenerator": "^0.14.7"
+  }
+}
